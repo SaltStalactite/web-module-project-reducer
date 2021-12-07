@@ -1,12 +1,16 @@
 import React, { useReducer } from 'react';
 import reducer, { initialState } from '../reducers'
 import './App.css';
-
+import { addOne } from '../actions';
 import TotalDisplay from './TotalDisplay';
 import CalcButton from './CalcButton';
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState)
+
+  const handleAddOne = () => {
+    dispatch(addOne())
+  }
 
   return (
     <div className="App">
